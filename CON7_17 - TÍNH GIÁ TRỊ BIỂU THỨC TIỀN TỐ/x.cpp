@@ -33,7 +33,7 @@ int main()
         cin >> s;
         stack<int> st;
         int tong = 0;
-        for (int i = 0; i < s.length(); i++)
+        for (int i = s.length()-1; i >= 0; i++)
         {
             if (s[i] == '+' || s[i] == '-' || s[i] == '*' || s[i] == '/')
             {
@@ -41,7 +41,7 @@ int main()
                 st.pop();
                 int t2 = st.top();
                 st.pop();
-                tong = tong2(s[i], t2, t1);
+                tong = tong2(s[i], t1, t2);
                 st.push(tong);
             }
             else
